@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Project_PRN211;
 
-namespace Project_PRN211.DBContext
+namespace Project_PRN211.Model
 {
-    internal class AccountDBContext
+    internal class Validation
     {
-        public  AccountDBContext()
+        public string CheckString()
         {
-
+            return "";
         }
     }
 }

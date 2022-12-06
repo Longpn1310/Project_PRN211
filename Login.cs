@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Project_PRN211.DBContext;
 
 namespace Project_PRN211
 {
@@ -20,30 +21,30 @@ namespace Project_PRN211
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-            DataProvider d = new DataProvider(); 
             try
             {
-                string strSelect = "select Username, Password from Users where Username = @username and Password = @password";
-                SqlParameter[] param = new SqlParameter[]
+                using (PRN211_ProjectContext context = new PRN211_ProjectContext())
                 {
-                    new SqlParameter("@username",textBoxUsername.Text),
-                    new SqlParameter("@password",textBoxPassword.Text)
-                };
-                IDataReader dr = d.executeQuery2(strSelect, param);
-                if (dr.Read())
-                {
-                    this.Hide();
-                }
-                else
-                {
-                    MessageBox.Show("Thong tin dang nhap khong chinh xac!");
-                }
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show("Thong tin dang nhap khong chinh xac!" + ex.Message);
-            }
+                    var data = context.Accounts.Where(x => x.Username.Equals(textBoxUsername.Text) && x.Password.Equals(textBoxPassword.Text)).Count();
+                    if (data > 0)
+                    {
 
+                    }
+                    else
+                    {
+                        MessageBox.Show("Thong tin dang nhap khong chinh xac");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void buttonExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
