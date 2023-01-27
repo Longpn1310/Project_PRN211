@@ -35,6 +35,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.linkLabelForgetPassword = new System.Windows.Forms.LinkLabel();
+            this.linkLabelRegister = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // textBoxUsername
@@ -55,7 +57,7 @@
             // 
             // buttonLogin
             // 
-            this.buttonLogin.Location = new System.Drawing.Point(260, 323);
+            this.buttonLogin.Location = new System.Drawing.Point(250, 336);
             this.buttonLogin.Name = "buttonLogin";
             this.buttonLogin.Size = new System.Drawing.Size(98, 33);
             this.buttonLogin.TabIndex = 2;
@@ -71,7 +73,7 @@
             this.buttonExit.TabIndex = 3;
             this.buttonExit.Text = "Exit";
             this.buttonExit.UseVisualStyleBackColor = true;
-            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
+            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click_1);
             // 
             // label1
             // 
@@ -94,17 +96,39 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(218, 156);
+            this.label3.Location = new System.Drawing.Point(218, 147);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(160, 15);
             this.label3.TabIndex = 6;
             this.label3.Text = "Chào mừng bạn đến với Ipay";
+            // 
+            // linkLabelForgetPassword
+            // 
+            this.linkLabelForgetPassword.AutoSize = true;
+            this.linkLabelForgetPassword.Location = new System.Drawing.Point(250, 383);
+            this.linkLabelForgetPassword.Name = "linkLabelForgetPassword";
+            this.linkLabelForgetPassword.Size = new System.Drawing.Size(96, 15);
+            this.linkLabelForgetPassword.TabIndex = 7;
+            this.linkLabelForgetPassword.TabStop = true;
+            this.linkLabelForgetPassword.Text = "ForgetPassword?";
+            // 
+            // linkLabelRegister
+            // 
+            this.linkLabelRegister.AutoSize = true;
+            this.linkLabelRegister.Location = new System.Drawing.Point(236, 305);
+            this.linkLabelRegister.Name = "linkLabelRegister";
+            this.linkLabelRegister.Size = new System.Drawing.Size(124, 15);
+            this.linkLabelRegister.TabIndex = 8;
+            this.linkLabelRegister.TabStop = true;
+            this.linkLabelRegister.Text = "Register New Account";
             // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(717, 648);
+            this.Controls.Add(this.linkLabelRegister);
+            this.Controls.Add(this.linkLabelForgetPassword);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -114,6 +138,7 @@
             this.Controls.Add(this.textBoxUsername);
             this.Name = "Login";
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.Login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -128,5 +153,7 @@
         private Label label1;
         private Label label2;
         private Label label3;
+        private LinkLabel linkLabelForgetPassword;
+        private LinkLabel linkLabelRegister;
     }
 }

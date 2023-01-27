@@ -17,10 +17,4 @@
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="6.0.0" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Accounts\" />
-    <Folder Include="Controller\" />
-    <Folder Include="View\" />
-  </ItemGroup>
-
 </Project>
